@@ -12,14 +12,11 @@ import numpy as np
 
 def parse_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--dim', type=int, default=1024 << 5)
-    parser.add_argument('--max', type=int, default=256)
+    parser.add_argument('--dim', type=int, default=1024 << 4)
+    parser.add_argument('--max', type=int, default=1000)
     parser.add_argument('--outpath', type=str, default="cost")
     
-    args = parser.parse_args()
-    assert args.max == 256
-    
-    return args
+    return parser.parse_args()
 
 
 if __name__ == "__main__":

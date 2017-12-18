@@ -20,5 +20,4 @@ time python compare.py
 
 # Notes:
 #
-# To change size of matrix, need to change it in hungarian.cu, then recompile
-# Also, hungarian.cu operates on CHARs, ATM.  So maybe this isn't a totally fair comparison?
+# For now, to change size of matrix, need to change it in hungarian.cu and recompile
