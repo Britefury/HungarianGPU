@@ -68,9 +68,9 @@ const int row_mask = (1 << log2_n) - 1;             // Used to extract the row f
 const int nrow = n, ncol = n;                       // The matrix is square so the number of rows and columns is equal to n
 const int max_threads_per_block = 1024;             // The maximum number of threads per block
 
-typedef int data;
+typedef uint data;
 #define MAX_DATA INT_MAX
-#define MIN_DATA INT_MIN
+#define MIN_DATA 0
 // typedef unsigned char data;
 // #define MAX_DATA 255
 // #define MIN_DATA 0
@@ -629,9 +629,11 @@ int main(int argc, char* argv[]) {
     // Generate data
     std::string inpath(argv[1]);
     
+    std::cerr << "hungarian " << n << "x" << n << std::endl;
+    
     auto begin = std::chrono::high_resolution_clock::now();
     std::ifstream infile(inpath);
-    int i;
+    data i;
     for (int r = 0; r < nrow; r++) {
         for (int c = 0; c < ncol; c++) {
             infile >> i;

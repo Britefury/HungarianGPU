@@ -21,3 +21,8 @@ time python compare.py
 # Notes:
 #
 # For now, to change size of matrix, need to change it in hungarian.cu and recompile
+# !! This seems to break above n = 2 ** 14 -- not sure why, may be an easy fix
+
+# Speed (16384 square matrix)
+# GPU: 0.8 s
+# CPU: 10 s
